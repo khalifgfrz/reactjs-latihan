@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Blog() {
-  const [posts, setPosts] = useState(postsData);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/1")
