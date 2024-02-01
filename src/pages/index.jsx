@@ -16,7 +16,7 @@ function Homepage() {
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/1")
       .then((response) => response.json())
-      .then((json) => setPosts(json));
+      .then((json) => setExternalPosts(json));
   }, []);
 
   return (
@@ -24,7 +24,6 @@ function Homepage() {
       <h1>Simple Blog</h1>
       <Search onSearchChange={onSearchChange} totalPosts={totalPosts} />
       {posts.map((props, index) => (
-        // <Article title={title} tags={tags} date={date} />
         <Article {...props} key={index} />
       ))}
     </>
